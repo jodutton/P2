@@ -1,3 +1,5 @@
+
+
 @media screen and (max-width:767px) {
 .body {
     margin: 0rem;
@@ -77,6 +79,10 @@
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
+    &:hover {
+        background-color: lighten
+        ;
+    }
 }
 
 .restaurantsection {
@@ -93,8 +99,20 @@
     width: 17rem;
     height: 16rem;
     margin-bottom: 1rem;
+    }
 
+.new {
+    width: 4rem;
+    height: 2rem;
+    background-color: #99e2d0;
+    color: rgb(3, 136, 107);
+    padding-left: 2rem;
+    position: absolute;
+    margin-left: 10rem;
+    margin-top: 1rem;
+    border-radius: 0.2rem;
 
+    
 }
 
 .restaurantcards img {
@@ -111,6 +129,7 @@
     text-decoration: none;
     font-size: 0.8rem;
     margin-left: 1rem;
+    }
 }
 
 .likecontainer{
@@ -124,49 +143,55 @@
     transform: scale (1);
     transition-property: transform;
     transition-duration: 400ms;
-    &:active
+    &:hover
      {
         transform: scale(1);
-        opacity: 1;
-        color: #9356dc; 
-        transition: opacity;
+        opacity: 1; 
+        color: #9356dc;
+        background-color: transparent;
     }
 }
 
 .like {
-    background-color: transparent;
-    &:active {
-        opacity: 1;
-        color:#9356dc;
-        background: linear-gradient(#9356dc, #ff79da);
+    background-color: transparent ;
 
+     
     }
-}
 
 .likefill {
+    opacity: 0;
+    width: 1rem;
+    height: 1rem;
+    &:hover {
+        transition-delay: 200ms;
+        opacity: 1;
     color: #9356dc;
     background: linear-gradient(#9356dc, #ff79da);
     position: relative; bottom: 1rem;
 }
-
+}
 
 .footernav {
     background-color: grey;
+    padding-bottom: 1rem;
 
 }
 
 .footerlogo {
+    color: white;
     height: 1.5rem;
     width: 8rem;
     margin-top: 1rem;
     margin-left: 3rem;
+
 }
 
 
 .navlink {
     list-style:none;
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.3rem;
+
 }
 
 .restaurantimage{
@@ -176,12 +201,15 @@
 }
 
 .menupage {
-    border-radius: 1rem;
+    border-radius: 3rem;
     background-color: whitesmoke;
     padding-left: 1rem;
     padding-top: 1rem;
+    position: absolute; top: 20rem;
     
-}
+}  
+    
+
 
 .category {
     border-bottom: 0.2rem solid #99e2d0;
@@ -213,12 +241,13 @@
 }
 
 .select {
-    display: none;
-}
-.select:active {
+    float: right;
+    display: flex;
+    position: relative; bottom: 3rem;
+    &:hover {
     background-color: #99e2d0;
     color: white;
-    float: right;
+}
 }
 
 .order {
@@ -239,4 +268,3 @@
 
 
 
-}
