@@ -1,5 +1,6 @@
 
-* {
+* { 
+
     box-sizing: border-box; 
     font-family: 'Roboto', sans-serif, 'Shrikhand';
     margin: 0;
@@ -14,7 +15,9 @@
     margin-bottom: 1rem;
     margin-left: 5rem;
 }
-
+.locationdot {
+   padding-right: 1rem;
+}
 .location {
     background-color: lightgray;
     padding: 1rem;
@@ -22,7 +25,7 @@
     font-weight: bold;
     border-top: 0.1rem solid gray;
     color: darkslategrey;
-    padding-left: 7rem;
+    padding-left: 5rem;
     
 }
 
@@ -38,6 +41,14 @@
     justify-content: center;
     font-size: 0.9rem;
     gap: 2rem;
+}
+.infosmall {
+    font-size: 1.2rem;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 1rem;
 }
 
 .explorebutton {
@@ -76,6 +87,12 @@
     margin-left: 0.5rem;
 
 }
+.icon {
+    padding-right: 1.5rem;
+    &:hover {
+        color: #9356dc;
+    }
+}
 .chosebuttons {
     border-radius: 1rem;
     background-color: whitesmoke;
@@ -112,6 +129,9 @@
     width: 21rem;
     height: 13rem;
     margin-bottom: 1rem;
+    &:hover {
+        background-color: whitesmoke ;
+    }
     }
 
 .new {
@@ -143,9 +163,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    text-decoration: none;
+
     font-size: 0.8rem;
     margin-left: 1rem;
+    a, a:hover, a:active, a:visited { color: black; text-decoration: none; }
+   
     }
 }
 
@@ -181,7 +203,7 @@
     &:hover {
         transition: 500ms ease-in-out;
         opacity: 1;
-        color:  #ff79da;
+        color: #9356dc ;
         background: transparent;
         position: relative; bottom: 1rem;
 }
@@ -217,8 +239,11 @@
     width: 6rem;
     margin-top: 1rem;
     margin-left: 3rem;
+    -webkit-filter: invert(100%); /* Safari/Chrome */
+    filter: invert(100%);
 
 }
+
 
 
 .navlink {
@@ -226,8 +251,11 @@
     text-decoration: none;
     padding: 0.3rem;
     color: white;
-
+    a, a:hover, a:active, a:visited { 
+        color: white; 
+    text-decoration: none;}
 }
+
 
 .restaurantimage{
     height: 20rem;
@@ -244,9 +272,12 @@
     width: 100%;
     padding-bottom: 1rem;
     font-size: 0.9rem;
-    
+
     
 }  
+.title {
+    font-family:'Shrikhand';
+}
     
 .heart {
     float: right;
@@ -254,21 +285,22 @@
 
 }
 
+
 .category {
     border-bottom: 0.2rem solid #99e2d0;
     width: 3rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
-   
+
 
 
 }
-@keyframes slideIn{
-    0% { transform: translateX(-100%);}
-    100% {transform: translateX(0);}
+@keyframes slidetop{
+    0% { transform: translateY(-100%);}
+    100% {transform: translateY(0);}
 }
 .menuoption {
-    animation: 2s ease-in 0s 1 slideIn;
+    animation: 2s ease-in 0s 1 slidetop;
     border-radius: 1rem;
     background-color: white;
     border-color: white;
@@ -286,7 +318,8 @@
         background-image: linear-gradient(to left,
         #99e2d0 20%,
         transparent 20%);
-        transition: all 500ms ease-in;
+        transform: transition;
+        transition: all 500ms ease-in-out;
    
     }
 }
@@ -324,8 +357,8 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 4rem;
-    text-decoration: none;
     width: 12rem;
+    a, a:hover, a:active, a:visited { color: white; text-decoration: none; }
     
 }
 
