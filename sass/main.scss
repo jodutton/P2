@@ -7,6 +7,50 @@
 }
 
 @media screen and (min-width:300px) {
+   
+    .spinner {
+        position: fixed;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        margin: 1rem;
+        
+    }
+    
+    .spinner:before,
+    .spinner:after {
+        content: "";
+        position:absolute;
+        border-radius: 50%;
+   
+    }
+    
+    .spinner:before {
+        width:100%;
+        height: 100%;
+        background-image: linear-gradient(0deg, #ff79da 0%, #9356dc  100%);
+        animation: spin 1s infinite linear;
+        
+    }
+    
+    .spinner:after {
+        width: 80%;
+        height: 80%;
+        background-color:white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+   
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(360deg);
+        }
+        to { opacity: 0;}
+    }
+    
+      
   
 .logo {
     height: 2rem;
@@ -53,7 +97,7 @@
 
 .explorebutton {
     color: white;
-    background: linear-gradient(#ff79da, #9356dc);
+    background: linear-gradient(#ff79da, #a579db);
     padding: 1rem;
     border-radius: 5rem;
     border-color: transparent;
@@ -64,6 +108,11 @@
     margin-bottom: 1rem;
     margin-right: 5rem;
     margin-left: 2rem;
+    &:hover {
+        background-color: linear-gradient(#fde0f4, #e4d3f8);
+        border-color: gray;
+       
+    }
 }
 
 .buttons {
@@ -108,8 +157,14 @@
     &:hover {
         background-color: #f5ecff;
         border-color: #f5ecff;
-        ;
+    
+      
     }
+    &:hover i {
+        color: #9356dc;
+    }
+
+  
 }
 
 .restaurantsection {
@@ -130,8 +185,10 @@
     height: 13rem;
     margin-bottom: 1rem;
     &:hover {
-        background-color: whitesmoke ;
-    }
+        background-color: whitesmoke;
+        border: gray solid 0.1px;
+           }
+    
     }
 
 .new {
@@ -167,7 +224,7 @@
     font-size: 0.8rem;
     margin-left: 1rem;
     a, a:hover, a:active, a:visited { color: black; text-decoration: none; }
-   
+  
     }
 }
 
@@ -201,9 +258,9 @@
     width: 1rem;
     height: 1rem;
     &:hover {
-        transition: 500ms ease-in-out;
+        transition: 600ms linear;
         opacity: 1;
-        color: #9356dc ;
+        color: linear-gradient( #9356dc, #ff79da);
         background: transparent;
         position: relative; bottom: 1rem;
 }
@@ -226,7 +283,7 @@
 .footernav2 {
     background-color: rgba(32, 31, 31, 0.842);
     padding-bottom: 1rem;
-    margin-top: 78rem;
+    margin-top: 86rem;
     padding-top: 1rem;
   
    
@@ -272,6 +329,7 @@
     width: 100%;
     padding-bottom: 1rem;
     font-size: 0.9rem;
+   
 
     
 }  
@@ -281,7 +339,7 @@
     
 .heart {
     float: right;
-    padding-right: 2rem;
+    padding-right: 1rem;
 
 }
 
@@ -309,21 +367,92 @@
     margin-left: 0rem;
     margin-bottom: 1rem; 
     padding-top: 1rem;
-    
-    
-    &:hover {
-       
-        background-position: 10%;
-        background-size: 100%;
-        background-image: linear-gradient(to left,
-        #99e2d0 20%,
-        transparent 20%);
-        transform: transition;
-        transition: all 500ms ease-in-out;
+    &:hover .select {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-animation-name: dishAdded;
+        animation-name: dishAdded;
+-webkit-animation-duration: 0.35s;
+        animation-duration: 0.35s;
+-webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+-webkit-animation-delay: 0s;
+        animation-delay: 0s;
+-webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        .menuoption:hover .select i {
+            -webkit-animation: .3s linear 0s rotateIcon;
+                    animation: .3s linear 0s rotateIcon;
+        
+          }
    
-    }
 }
-
+}
+.menuoption2 {
+    animation: 4s ease-in 0s 1 slidetop;
+    border-radius: 1rem;
+    background-color: white;
+    border-color: white;
+    width: 22rem;
+    height: 5rem;
+    margin-left: 0rem;
+    margin-bottom: 1rem; 
+    padding-top: 1rem;
+    &:hover .select {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-animation-name: dishAdded;
+        animation-name: dishAdded;
+-webkit-animation-duration: 0.35s;
+        animation-duration: 0.35s;
+-webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+-webkit-animation-delay: 0s;
+        animation-delay: 0s;
+-webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        .menuoption:hover .select i {
+            -webkit-animation: .3s linear 0s rotateIcon;
+                    animation: .3s linear 0s rotateIcon;
+        
+          }
+   
+}
+ }
+ .menuoption3 {
+        animation: 6s ease-in 0s 1 slidetop;
+        border-radius: 1rem;
+        background-color: white;
+        border-color: white;
+        width: 22rem;
+        height: 5rem;
+        margin-left: 0rem;
+        margin-bottom: 1rem; 
+        padding-top: 1rem;
+        &:hover .select {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-animation-name: dishAdded;
+            animation-name: dishAdded;
+    -webkit-animation-duration: 0.35s;
+            animation-duration: 0.35s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+            .menuoption:hover .select i {
+                -webkit-animation: .3s linear 0s rotateIcon;
+                        animation: .3s linear 0s rotateIcon;
+            
+              }
+       
+    }
+     }    
 .menutext {
     display: flex;
     flex-direction: column;
@@ -341,8 +470,10 @@
 .select {
     color: white;
     float: right;
-    display: flex;
-    position: relative; bottom: 2rem;
+    position: relative; bottom:2rem;
+    background-color: #99e2d0;
+    
+
 
 }
 
@@ -365,12 +496,16 @@
 
 @media screen and (min-width:767px) {
 
+    .backbutton {
+        margin: 2rem;
+    }
     .logo {
         display: flex;
      flex-direction: row;
      justify-content: center;
-     width: 70%;
+     width: 50%;
      height: 50%;
+     padding-left: 10rem;
        
     }
     .location {
@@ -418,12 +553,15 @@
     
    }
    .footerlogo {
-    height: 5rem;
-    width: 10rem;
+    height: 4rem;
+    width: 9rem;
     
    }
    .navlink {
     padding: 0.5rem;    
+   }
+   .restaurantimage {
+    object-fit: cover;
    }
    .menupage {
     position: absolute; top: 30rem;
@@ -438,11 +576,11 @@
    
    }
    .footernav2 {
-    margin-top: 52rem;
+    margin-top: 60rem;
     display: flex;
    
    }
-
+ 
 }
 
 @media screen and (min-width:900px) {
@@ -451,7 +589,7 @@
 
     }
     .footernav2 {
-        margin-top: 47rem;
+        margin-top: 49rem;
 
     }
 }
