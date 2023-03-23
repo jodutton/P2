@@ -1,4 +1,3 @@
-
 * { 
 
     box-sizing: border-box; 
@@ -22,6 +21,8 @@
         content: "";
         position:absolute;
         border-radius: 50%;
+        
+ 
    
     }
     
@@ -30,7 +31,8 @@
         height: 100%;
         background-image: linear-gradient(0deg, #ff79da 0%, #9356dc  100%);
         animation: spin 1s infinite linear;
-        
+        animation-duration: 3s;
+        opacity: 1;        
     }
     
     .spinner:after {
@@ -40,14 +42,19 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
    
     }
-    
+    .spinner:hover {
+        opacity: 0;
+    }
     @keyframes spin {
-        from {
-            transform: rotate(360deg);
+     
+          from { transform: rotate(360deg) ;
+        
         }
-        to { opacity: 0;}
+      to{ transform: rotate(0deg);}
+     
     }
     
       
@@ -244,23 +251,28 @@
         transform: scale(1);
         opacity: 1; 
         background-color: transparent;
-    }
+        
+}
 }
 
 .like {
-    background-color: transparent ;
+    background: transparent;
    
  
     }
+@keyframes fill {
+    0% {color: #ff79da};
+    50% {color:#d370d6};
+    100% {color:#9356dc}; }
 
 .likefill {
     opacity: 0;
     width: 1rem;
     height: 1rem;
     &:hover {
+        animation: fill 4s;
         transition: 600ms linear;
         opacity: 1;
-        color: linear-gradient( #9356dc, #ff79da);
         background: transparent;
         position: relative; bottom: 1rem;
 }
@@ -337,12 +349,16 @@
     
 }  
 .title {
-    font-family:'Shrikhand';
+    font-family: 'Shrikhand';
+
 }
     
 .heart {
     float: right;
     padding-right: 1rem;
+    &:hover {
+        animation: fill 4s; 
+    }
 
 }
 
@@ -360,6 +376,34 @@
     0% { transform: translateY(-100%);}
     100% {transform: translateY(0);}
 }
+
+@keyframes slidein{
+         0% {background: transparent;}
+    10% { background-image: linear-gradient(to left,
+        #99e2d0 1%,
+        transparent 10%);}
+        25% { background-image: linear-gradient(to left,
+            #99e2d0 10%,
+            transparent 20%);}
+            50% { background-image: linear-gradient(to left,
+                #99e2d0 12%,
+                transparent 20%);}
+                75% { background-image: linear-gradient(to left,
+                    #99e2d0 17%,
+                    transparent 20%);}
+        100% { background-image: linear-gradient(to left,
+            #99e2d0 20%,
+            transparent 20%);}
+}
+
+@keyframes slideside{
+    
+    
+    0% { transform: translateX(0%);
+       transform: rotate(360deg);}
+    100% {transform: translateX(-100%);
+        transform: rotate(0deg);}
+}
 .menuoption {
     animation: 2s ease-in 0s 1 slidetop;
     border-radius: 1rem;
@@ -370,30 +414,19 @@
     margin-left: 0rem;
     margin-bottom: 1rem; 
     padding-top: 1rem;
-    &:hover .select {
+    &:hover {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-animation-name: dishAdded;
-        animation-name: dishAdded;
--webkit-animation-duration: 0.35s;
-        animation-duration: 0.35s;
--webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
--webkit-animation-delay: 0s;
-        animation-delay: 0s;
--webkit-animation-fill-mode: forwards;
+       animation: 0.6s ease-in  slidein;
+       -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
-        .menuoption:hover .select i {
-            -webkit-animation: .3s linear 0s rotateIcon;
-                    animation: .3s linear 0s rotateIcon;
+       
         
-          }
-   
-}
+    }
 }
 .menuoption2 {
-    animation: 4s ease-in 0s 1 slidetop;
+    animation: 2s ease-in 0s 1 slidetop;
     border-radius: 1rem;
     background-color: white;
     border-color: white;
@@ -402,59 +435,39 @@
     margin-left: 0rem;
     margin-bottom: 1rem; 
     padding-top: 1rem;
-    &:hover .select {
+    &:hover {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-animation-name: dishAdded;
-        animation-name: dishAdded;
--webkit-animation-duration: 0.35s;
-        animation-duration: 0.35s;
--webkit-animation-timing-function: linear;
-        animation-timing-function: linear;
--webkit-animation-delay: 0s;
-        animation-delay: 0s;
--webkit-animation-fill-mode: forwards;
+       animation: 0.6s ease-in  slidein;
+       -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
-        .menuoption:hover .select i {
-            -webkit-animation: .3s linear 0s rotateIcon;
-                    animation: .3s linear 0s rotateIcon;
+       
         
-          }
-   
-}
+    }
+ 
  }
  .menuoption3 {
-        animation: 6s ease-in 0s 1 slidetop;
-        border-radius: 1rem;
-        background-color: white;
-        border-color: white;
-        width: 22rem;
-        height: 5rem;
-        margin-left: 0rem;
-        margin-bottom: 1rem; 
-        padding-top: 1rem;
-        &:hover .select {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-animation-name: dishAdded;
-            animation-name: dishAdded;
-    -webkit-animation-duration: 0.35s;
-            animation-duration: 0.35s;
-    -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-    -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-            .menuoption:hover .select i {
-                -webkit-animation: .3s linear 0s rotateIcon;
-                        animation: .3s linear 0s rotateIcon;
-            
-              }
+    animation: 2s ease-in 0s 1 slidetop;
+    border-radius: 1rem;
+    background-color: white;
+    border-color: white;
+    width: 22rem;
+    height: 5rem;
+    margin-left: 0rem;
+    margin-bottom: 1rem; 
+    padding-top: 1rem;
+    &:hover {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+       animation: 0.6s ease-in  slidein;
+       -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
        
+        
     }
+        
      }    
 .menutext {
     display: flex;
@@ -473,12 +486,21 @@
 .select {
     color: white;
     float: right;
-    position: relative; bottom:2rem;
+    position:relative; 
     background-color: #99e2d0;
+    opacity: 1;
+    &:hover {
+        opacity: 1;
+        -webkit-animation: 1s linear 0s slideside ;
+        animation: 1s linear 0s slideside ;
+       
+        }
+      
+        }
     
 
+    
 
-}
 
 .order {
     background: linear-gradient(#ff79da, #9356dc);
@@ -594,6 +616,10 @@
 }
 
 @media screen and (min-width:900px) {
+    .spinner {
+       margin-left: 30rem;
+    }
+  
     .info {
         padding-left: 7rem;
     }
