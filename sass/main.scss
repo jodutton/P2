@@ -1,63 +1,68 @@
+@import url('https://fonts.googleapis.com/css2 family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 * { 
 
     box-sizing: border-box; 
-    font-family: 'Roboto', sans-serif, 'Shrikhand';
     margin: 0;
-}
+    font-family: "Roboto", sans-serif, "Shrikhand" ;
+   }
+
+
 
 @media screen and (min-width:300px) {
    
-    .spinner {
+    .loading {
         position: fixed;
-        width: 20rem;
-        height: 20rem;
-        border-radius: 50%;
-        margin: 1rem;
-        
-    }
-    
-    .spinner:before,
-    .spinner:after {
-        content: "";
-        position:absolute;
-        border-radius: 50%;
-        
- 
-   
-    }
-    
-    .spinner:before {
-        width:100%;
+        width: 100%;
         height: 100%;
-        background-image: linear-gradient(0deg, #ff79da 0%, #9356dc  100%);
-        animation: spin 1s infinite linear;
+        background: linear-gradient(#9356dc, #ff79da) ;
+        z-index: 1;
+    }
+    .spinner {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+        flex-flow: column;
+        -webkit-box-pack:center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: fixed;
+        width: 4.5em;
+        height: 4.5em;
+        z-index: 10;
+        margin-top: 15rem;
+        margin-left: 9rem;
+        border: 0.8em solid transparent;
+        border-color: #eee;
+        border-top-color:  #99e2d0;
+        border-radius: 50%;
+        background-image: -webkit-linear-gradient( #9356dc, #ff79da);
+        background-image: linear-gradient(#9356dc, #ff79da);
+        -webkit-animation: ease-in-out 3s;
+        -webkit-animation-fill-mode: forwards;
+        opacity: 1;
+        animation: loadingspin 1s linear infinite;
         animation-duration: 3s;
-        opacity: 1;        
-    }
-    
-    .spinner:after {
-        width: 80%;
-        height: 80%;
-        background-color:white;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
-   
-    }
-    .spinner:hover {
-        opacity: 0;
-    }
-    @keyframes spin {
-     
-          from { transform: rotate(360deg) ;
-        
-        }
-      to{ transform: rotate(0deg);}
-     
-    }
-    
       
+     
+    }
+    
+    @keyframes loadingspin {
+        100% {
+          transform: rotate(360deg) ;
+           
+        }
+
+       
+ 
+    
+    }
+   
   
 .logo {
     height: 2rem;
@@ -196,7 +201,7 @@
         border: gray solid 0.1px;
            }
     
-    }
+        }
 
 .new {
     width: 6rem;
@@ -349,9 +354,12 @@
     
 }  
 .title {
-    font-family: 'Shrikhand';
+    font-family: "Shrikhand";
 
 }
+
+
+
     
 .heart {
     float: right;
@@ -368,6 +376,7 @@
     width: 3rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
+    font-weight: light;
 
 
 
@@ -421,10 +430,18 @@
        animation: 0.6s ease-in  slidein;
        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
+        &:hover .select {
+            position: absolute; right:2rem;
+            opacity: 1;
+        -webkit-animation: 1s linear 0s slideside ;
+        animation: 1s linear 0s slideside ;
+       
+        }
+        }
        
         
     }
-}
+
 .menuoption2 {
     animation: 2s ease-in 0s 1 slidetop;
     border-radius: 1rem;
@@ -442,7 +459,13 @@
        animation: 0.6s ease-in  slidein;
        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
+        &:hover .select {
+            position: absolute; right:2rem;
+            opacity: 1;
+        -webkit-animation: 1s linear 0s slideside ;
+        animation: 1s linear 0s slideside ;
        
+        }
         
     }
  
@@ -464,7 +487,13 @@
        animation: 0.6s ease-in  slidein;
        -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
+        &:hover .select {
+            position: absolute; right:2rem;
+            opacity: 1;
+        -webkit-animation: 1s linear 0s slideside ;
+        animation: 1s linear 0s slideside ;
        
+        }
         
     }
         
@@ -488,7 +517,7 @@
     float: right;
     position:relative; 
     background-color: #99e2d0;
-    opacity: 1;
+    opacity: 0;
     &:hover {
         opacity: 1;
         -webkit-animation: 1s linear 0s slideside ;
@@ -515,6 +544,11 @@
     margin-left: 4rem;
     width: 12rem;
     a, a:hover, a:active, a:visited { color: white; text-decoration: none; }
+    &:hover {
+        background-color: linear-gradient(#fde0f4, #e4d3f8);
+        border-color: gray;
+       
+    }
     
 }
 
@@ -598,6 +632,30 @@
    .menupage {
     position: absolute; top: 30rem;
    }
+   .menuoption {
+    &:hover .select {
+        width: 2%;
+        position: relative;left: 20rem;
+    }
+
+ 
+   }
+   .menuoption2 {
+    &:hover .select {
+        width: 2%;
+        position: relative;left: 20rem;
+    }
+
+ 
+   }
+   .menuoption3 {
+    &:hover .select {
+        width: 2%;
+        position: relative;left: 20rem;
+    }
+
+ 
+   }
    .order {
    margin: 3rem;
 
@@ -632,5 +690,5 @@
     .footernav2 {
         margin-top: 59rem;
 
-    }
-}
+    }}
+
