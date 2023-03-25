@@ -144,7 +144,7 @@
         margin-left: 2rem;
 
         &:hover {
-            background-color: linear-gradient(#fde0f4, #e4d3f8);
+            background: linear-gradient(#fde0f4, #e4d3f8);
             border-color: gray;
 
         }
@@ -164,7 +164,7 @@
         background-color: #9356dc;
         border-radius: 50rem;
         padding-left: 0.5rem;
-        padding-right: 1rem;
+        padding-right: 0.2rem;
         padding-top: 0.2rem;
         width: 1rem;
         position: relative;
@@ -224,7 +224,7 @@
         border-radius: 2rem;
         padding-bottom: 1rem;
         width: 21rem;
-        height: 13rem;
+        height: 14rem;
         margin-bottom: 1rem;
 
         &:hover {
@@ -261,11 +261,11 @@
     .cardstext {
 
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         margin-left: 1rem;
+        
 
         a,
         a:hover,
@@ -286,12 +286,10 @@
     opacity: 1;
     position: absolute;
     cursor: pointer;
-    transform: scale (1);
     transition-property: transform;
     transition-duration: 400ms;
 
     &:hover {
-        transform: scale(1);
         opacity: 1;
         background-color: transparent;
 
@@ -445,7 +443,6 @@
     width: 3rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
-    font-weight: light;
 
 
 
@@ -652,6 +649,7 @@
 
 
 .order {
+    color: white;
     background: linear-gradient(#ff79da, #9356dc);
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -673,7 +671,8 @@
     }
 
     &:hover {
-        background-color: linear-gradient(#fde0f4, #e4d3f8);
+        color: white;
+        background: linear-gradient(#fde0f4, #e4d3f8);
         border-color: gray;
 
     }
