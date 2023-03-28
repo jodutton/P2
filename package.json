@@ -4,7 +4,7 @@
   "description": "project2",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed"
+    "sass": "sass --watch ./sass/main.scss:./css/main.css"
   },
   "author": "joanna dutton",
   "license": "ISC"
