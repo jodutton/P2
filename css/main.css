@@ -1,9 +1,74 @@
-@import url("https://fonts.googleapis.com/css2 family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-.body {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&family=Shrikhand&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.5rem, 0.5rem + 2vw, 1em);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+__ .location,
+.info, .new {
+  font-size: 1.5rem;
+}
+
+.chosebuttons {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.restaurantcards, .cardstext > h3 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.1rem;
+}
+
+.order {
+  font-size: 1rem;
+}
+
+.category > h3 {
+  font-weight: 300;
+}
+
+.menuoption {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.menuoption2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.menuoption3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.menutext {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.price {
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+*, *:before, *:after {
   margin: 0;
-  font-family: "Roboto";
+  padding: 0;
+  box-sizing: inherit;
 }
 
 .loading {
@@ -109,7 +174,7 @@
   font-weight: bold;
   border-top: 0.1rem solid gray;
   color: darkslategrey;
-  padding-left: 5rem;
+  padding-left: 7rem;
 }
 
 .info {
@@ -117,7 +182,7 @@
   margin-top: 0rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -132,7 +197,7 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 .explorebutton {
@@ -188,9 +253,7 @@
   border-color: white;
   padding: 1.5rem;
   margin-left: 1rem;
-  width: 19rem;
-  font-weight: bold;
-  font-size: 0.8rem;
+  width: 18rem;
   display: flex;
   justify-content: flex-start;
   padding-left: 2rem;
@@ -218,9 +281,8 @@
   border-radius: 2rem;
   padding-bottom: 1rem;
   width: 21rem;
-  height: 14rem;
+  height: 13rem;
   margin-bottom: 1rem;
-  font-family: "Roboto";
 }
 .restaurantcards:hover {
   background-color: whitesmoke;
@@ -229,7 +291,7 @@
 
 .new {
   width: 4rem;
-  height: 1rem;
+  height: 0.6rem;
   background-color: #99e2d0;
   color: rgb(3, 136, 107);
   padding-left: 2rem;
@@ -268,18 +330,13 @@
 .likecontainer {
   height: 1rem;
   width: 1rem;
-  margin-left: 15rem;
+  margin-left: 17rem;
   opacity: 1;
   position: relative;
+  display: flex;
+  justify-content: center;
   bottom: 2rem;
   cursor: pointer;
-  display: flex;
-  transition-property: transform;
-  transition-duration: 400ms;
-}
-.likecontainer:hover {
-  opacity: 1;
-  background-color: transparent;
 }
 
 .like {
@@ -289,17 +346,6 @@
   justify-content: center;
 }
 
-@keyframes fill {
-  0% {
-    color: #ff79da;
-  }
-  50% {
-    color: #d370d6;
-  }
-  100% {
-    color: #9356dc;
-  }
-}
 .likefill {
   opacity: 0;
   position: absolute;
@@ -307,22 +353,57 @@
   justify-content: center;
 }
 .likefill:hover {
-  animation: fill 2s;
-  transition: 600ms linear;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: ease-in;
+  color: #9356dc;
+  z-index: 1;
   opacity: 1;
-  background: transparent;
+  animation: fill 2s;
 }
 
+@keyframes fill {
+  0% {
+    color: transparent;
+  }
+  20% {
+    color: #ff79da;
+  }
+  30% {
+    color: #ff79bc;
+  }
+  40% {
+    color: #ff79f8;
+  }
+  50% {
+    color: #bd56dc;
+  }
+  60% {
+    color: #e479ff;
+  }
+  70% {
+    color: #e979ff;
+  }
+  90% {
+    color: #9356dc;
+  }
+  100% {
+    color: transparent;
+  }
+}
 .homefooternav {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
   max-width: 100%;
+  padding-left: 1rem;
 }
 
 .footernav {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 75rem;
+  margin-top: 72rem;
   padding-top: 1rem;
   max-width: 100%;
 }
@@ -330,17 +411,17 @@
 .footernav2 {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 90rem;
+  margin-top: 87rem;
   padding-top: 1rem;
   max-width: 100%;
 }
 
 .footerlogo {
   color: white;
-  height: 1.5rem;
+  height: 1.2rem;
   width: 6rem;
   margin-top: 1rem;
-  margin-left: 3rem;
+  padding-bottom: 1rem;
   -webkit-filter: invert(100%);
   /* Safari/Chrome */
   filter: invert(100%);
@@ -378,7 +459,7 @@
   padding-top: 1rem;
   position: absolute;
   top: 20rem;
-  width: 93%;
+  width: 96%;
   padding-bottom: 1rem;
   font-size: 0.9rem;
 }
@@ -391,7 +472,7 @@
   float: right;
   padding-right: 2rem;
   position: relative;
-  bottom: 3rem;
+  bottom: 2rem;
 }
 .heart:hover {
   animation: fill 4s;
@@ -404,16 +485,6 @@
   margin-top: 3rem;
 }
 
-@keyframes slidetop {
-  0% {
-    transform: translateY(50%);
-    visibility: hidden;
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(-30%);
-  }
-}
 @keyframes slidein {
   0% {
     background: transparent;
@@ -434,109 +505,168 @@
     background-image: linear-gradient(to left, #99e2d0 20%, transparent 20%);
   }
 }
-@keyframes slideside {
-  0% {
-    transform: translateX(-100%);
-    transform: rotate(360deg);
+@keyframes appear {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
   }
-  100% {
-    transform: translateX(100%);
-    transform: rotate(0deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 .menuoption {
-  animation: 2s ease-in 0s 1 slidetop;
-  border-radius: 1rem;
+  position: relative;
   background-color: white;
-  border-color: white;
   width: 20rem;
   height: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  cursor: pointer;
   margin-left: 0rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-left: 1rem;
+  animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
+  animation-delay: 0.25s;
 }
-.menuoption:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.menuoption:hover .menutext {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+.menuoption:hover .select {
   display: flex;
-  animation: 0.6s ease-in slidein;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.menuoption:hover:hover .select {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: 2rem;
+  right: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #99e2d0;
+  width: 25%;
+  height: 100%;
+  border-radius: 0rem 1rem 1rem 0rem;
+  transition: right 2s ease-in;
+  animation: slidein 1s;
+  z-index: 1;
   opacity: 1;
-  -webkit-animation: 1s linear 0s slideside;
-  animation: 1s linear 0s slideside;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
 }
-.menuoption:hover:hover .price {
-  margin: 2rem;
+.menuoption:hover .select i {
+  color: white;
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+.menuoption:hover .price {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+
+.select {
+  opacity: 0;
 }
 
 .menuoption2 {
-  animation: 4s ease-in 0s 1 slidetop;
-  border-radius: 1rem;
+  position: relative;
   background-color: white;
-  border-color: white;
   width: 20rem;
   height: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  cursor: pointer;
   margin-left: 0rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-left: 1rem;
+  animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
+  animation-delay: 0.5s;
 }
-.menuoption2:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.menuoption2:hover .menutext {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+.menuoption2:hover .select {
   display: flex;
-  animation: 0.6s ease-in slidein;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.menuoption2:hover:hover .select {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: 2rem;
+  right: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #99e2d0;
+  width: 25%;
+  height: 100%;
+  border-radius: 0rem 1rem 1rem 0rem;
+  transition: right 2s ease-in;
+  animation: slidein 1s;
+  z-index: 1;
   opacity: 1;
-  -webkit-animation: 1s linear 0s slideside;
-  animation: 1s linear 0s slideside;
 }
-.menuoption2:hover:hover .price {
-  margin: 2rem;
+.menuoption2:hover .select i {
+  color: white;
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+.menuoption2:hover .price {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
 }
 
 .menuoption3 {
-  animation: 6s ease-in 0s 1 slidetop;
-  border-radius: 1rem;
+  position: relative;
   background-color: white;
-  border-color: white;
   width: 20rem;
   height: 4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  cursor: pointer;
   margin-left: 0rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
   padding-left: 1rem;
+  animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
+  animation-delay: 0.75s;
 }
-.menuoption3:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.menuoption3:hover .menutext {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+.menuoption3:hover .select {
   display: flex;
-  animation: 0.6s ease-in slidein;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-.menuoption3:hover:hover .select {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  right: 2rem;
+  right: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #99e2d0;
+  width: 25%;
+  height: 100%;
+  border-radius: 0rem 1rem 1rem 0rem;
+  transition: right 2s ease-in;
+  animation: slidein 1s;
+  z-index: 1;
   opacity: 1;
-  -webkit-animation: 1s linear 0s slideside;
-  animation: 1s linear 0s slideside;
 }
-.menuoption3:hover:hover .price {
-  margin: 2rem;
+.menuoption3:hover .select i {
+  color: white;
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+.menuoption3:hover .price {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60%;
 }
 
 .menutext {
@@ -552,20 +682,6 @@
   position: relative;
   bottom: 0rem;
   padding-right: 1rem;
-}
-
-.select {
-  color: white;
-  float: right;
-  margin-top: 2rem;
-  position: relative;
-  background-color: #99e2d0;
-  opacity: 0;
-}
-.select:hover {
-  opacity: 1;
-  -webkit-animation: 1s linear 0s slideside;
-  animation: 1s linear 0s slideside;
 }
 
 .order {
@@ -659,7 +775,7 @@
     margin-left: 4rem;
   }
   .likecontainer {
-    margin-left: 7rem;
+    margin-left: 8rem;
   }
   .homefooternav {
     display: flex;
@@ -678,32 +794,17 @@
   .menupage {
     position: absolute;
     top: 30rem;
-    width: 96%;
-  }
-  .menuoption:hover .select {
-    width: 2%;
-    position: relative;
-    left: 20rem;
-  }
-  .menuoption2:hover .select {
-    width: 2%;
-    position: relative;
-    left: 20rem;
-  }
-  .menuoption3:hover .select {
-    width: 2%;
-    position: relative;
-    left: 20rem;
+    width: 98%;
   }
   .order {
     margin: 3rem;
   }
   .footernav {
-    margin-top: 86rem;
+    margin-top: 82rem;
     display: flex;
   }
   .footernav2 {
-    margin-top: 100rem;
+    margin-top: 98rem;
     display: flex;
   }
 }
@@ -730,16 +831,16 @@
     margin-left: 6rem;
   }
   .likecontainer {
-    padding-left: 2rem;
+    padding-left: 2.5rem;
   }
   .menupage {
-    width: 97%;
+    width: 98%;
   }
   .footernav {
-    margin-top: 86rem;
+    margin-top: 80rem;
   }
   .footernav2 {
-    margin-top: 100rem;
+    margin-top: 95rem;
   }
 }
 
