@@ -1,17 +1,23 @@
 @import "./base/typography";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&family=Shrikhand&display=swap");
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.body {
+    margin: auto;
+    max-width: 100%;
 }
 
 
-
-
 .loading {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -120,25 +126,29 @@
 
 .location {
     background-color: lightgray;
-    padding: 1rem;
     font-size: 0.9rem;
     font-weight: bold;
     border-top: 0.1rem solid gray;
     color: darkslategrey;
-    padding-left: 7rem;
+    width: 100%;
+    margin: auto;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
 
 }
 
 .info {
     background-color: whitesmoke;
     padding: 1rem;
-    max-width: 100%;
+    max-width: 99%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 0.9rem;
     gap: 2rem;
+    margin: auto;
 }
 
 .infosmall {
@@ -170,6 +180,7 @@
 
     }
 }
+
 .works {
     margin: 1rem;
 }
@@ -178,8 +189,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
-    margin-left: 0rem;
-    margin-bottom: 3rem;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 25px;
 
 }
 
@@ -189,6 +201,7 @@
     border-radius: 50rem;
     width: 1rem;
     position: relative;
+    left: -25px;
     top: 3rem;
     margin-left: 0.5rem;
     padding: 0.2rem;
@@ -207,17 +220,16 @@
 .chosebuttons {
     border-radius: 1rem;
     background-color: whitesmoke;
-    border-color: white;
+    border: none;
     padding: 1.5rem;
-    margin-left: 1rem;
-    width: 18rem;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     padding-left: 2rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
     &:hover {
         background-color: #f5ecff;
-        border-color: #f5ecff;
 
 
     }
@@ -231,63 +243,68 @@
 
 .restaurantsection {
     background-color: whitesmoke;
-    width: 25rem;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    padding-left: 1rem;
     font-size: 0.8rem;
-    max-width: 96%;
+    width: 100%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 
+}
+
+.cardimage {
+    position: relative;
 }
 
 .restaurantcards {
     background-color: white;
     border-radius: 2rem;
     padding-bottom: 1rem;
-    width: 21rem;
+    width: 90%;
     height: 13rem;
     margin-bottom: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
     &:hover {
         background-color: whitesmoke;
-       box-shadow: 0px 0px 0px 0.2px;
     }
 
 }
 
 .new {
-    width: 4rem;
-    height: 0.6rem;
     background-color: #99e2d0;
     color: rgb(3, 136, 107);
-    padding-left: 2rem;
     position: absolute;
-    margin-left: 14rem;
-    margin-top: 1rem;
     border-radius: 0.1rem;
     font-weight: bold;
-    padding-bottom: 1.5rem;
     font-size: 0.9rem;
+    top: 15px;
+    right: 15px;
+    padding: 15px 25px;
 
 
 }
 
 .restaurantcards img {
-    width: 21rem;
+    width: 100%;
     height: 10rem;
     object-fit: cover;
     border-radius: 2rem 2rem 0rem 0rem;
 }
 
+.cardbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .cardstext {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    width: 80%;
     font-size: 0.7rem;
-    margin-left: 1rem;
     font-family: "Roboto";
+    padding-left: 3px;
 
 
     a,
@@ -301,34 +318,32 @@
 }
 
 .likecontainer {
-    height: 1rem;
-    width: 1rem;
-    margin-left: 17rem;
+    width: 20%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    bottom: 2rem;
     cursor: pointer;
-   &:hover .likefill {
-    height: 2rem;
-    background: linear-gradient(#9356dc, #ff79da);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent ;
-    background-clip: text;
 
-   }
+    &:hover .likefill {
+        height: 2rem;
+        background: linear-gradient(#9356dc, #ff79da);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
 
-   
+    }
+
+
 }
 
-.like{
+.like {
     position: absolute;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
 }
 
 .likefill {
@@ -338,7 +353,7 @@
     justify-content: center;
     align-items: center;
     color: transparent;
-    }
+}
 
 
 .homefooternav {
@@ -356,7 +371,7 @@
     padding-top: 1rem;
     max-width: 100%;
     padding-left: 1rem;
-    
+
 
 
 
@@ -374,7 +389,7 @@
 
 }
 
-.footerlogo {   
+.footerlogo {
     color: white;
     height: 1.2rem;
     width: 6rem;
@@ -409,6 +424,7 @@
     justify-content: flex-start;
     margin-top: 1rem;
 }
+
 .backbutton {
     margin-left: 1rem;
     margin-top: 1rem;
@@ -436,24 +452,20 @@
 }
 
 .title {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
     font-family: "Shrikhand";
-
+& heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 35px;
+}
 }
 
 
-
-
-.heart {
-    float: right;
-    padding-right: 2rem;
-    position: relative;
-    bottom: 2rem;
-
-    &:hover {
-        animation: fill 4s;
-    }
-
-}
 
 
 .category {
@@ -505,207 +517,119 @@
 
 
 
- 
 
-  @keyframes appear 
-  {
-    from 
-    {
-      transform: translateY(100%);
-      opacity: 0;
+
+@keyframes appear {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
     }
-    to 
-    {
-      opacity: 1;
-      transform: translateY(0);
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
 
 .menuoption {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: white;
-    width: 20rem;
+    width: 90%;
     height: 4rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
-    cursor: pointer;
     margin-left: 0rem;
     margin-bottom: 1rem;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
-    animation-delay:0.25s;
     overflow: hidden;
-    &:hover .menutext{
-        overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 40%;
-    }
-&:hover .select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0rem;
-    top: 50%;
-    transform: translateX(0%);
-    transform: translateY(-50%);
-    transition: transform linear 3s;
-    background-color: #99e2d0;
-    width: 20%;
-    height: 100%;
-    border-radius: 0rem 1rem 1rem 0rem;
-    transition: right 2s ease-in;
-    animation: slidein 1s;
-    z-index: 1;
-    opacity: 1;
-    & i {
-        color: white;
-        transform: translateX(0%) rotate(360deg);
-        transition: transform 0.5s ease;
-    }
-}
-&:hover .price {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 60%;
-}
-}
 
+    &:hover .menutext {
+        width: 50%;
+        
+    }
 
-.menuoption2 {
-        position: relative;
-        background-color: white;
-        width: 20rem;
-        height: 4rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        border-radius: 1rem;
-        cursor: pointer;
-        margin-left: 0rem;
-        margin-bottom: 1rem;
-        padding-top: 1rem;
-        padding-left: 1rem;
-        animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
-        animation-delay:0.5s;
-        overflow: hidden;
-        &:hover .menutext{
-            overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 40%;
-        }
     &:hover .select {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 0rem;
-        top: 50%;
+
         transform: translateX(0%);
-        transform: translateY(-50%);
-        transition: transform linear 3s;
         background-color: #99e2d0;
-        width: 20%;
+        width: 30%;
         height: 100%;
         border-radius: 0rem 1rem 1rem 0rem;
-        transition: right 2s ease-in;
-        animation: slidein 1s;
         z-index: 1;
         opacity: 1;
+
         & i {
             color: white;
-            transform: translateX(0%) rotate(360deg);
-            transition: transform 0.5s ease;
+            animation: rotate 1s forwards;
         }
     }
+
+    @keyframes rotate{
+        from { 
+            transform:rotate(-360deg);
+        }
+        to {
+            transform: rotate(0deg);
+        }
+
+    }
+
     &:hover .price {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        width: 60%;
-    }
-    }
-.menuoption3 {
-    position: relative;
-    background-color: white;
-    width: 20rem;
-    height: 4rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 1rem;
-    cursor: pointer;
-    margin-left: 0rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
-    animation-delay:0.75s;
-    overflow: hidden;
-    &:hover .menutext{
-        overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 40%;
-    }
-&:hover .select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0rem;
-    top: 50%;
-    transform: translateX(0%);
-    transform: translateY(-50%);
-    transition: transform linear 3s;
-    background-color: #99e2d0;
-    width: 20%;
-    height: 100%;
-    border-radius: 0rem 1rem 1rem 0rem;
-    transition: right 2s ease-in;
-    animation: slidein 1s;
-    z-index: 1;
-    opacity: 1;
-    & i {
-        color: white;
-        transform: translateX(0%) rotate(360deg);
-        transition: transform 0.5s ease;
     }
 }
-&:hover .price {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 60%;
-}
-}
+
 
 
 .menutext {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     font-size: 0.9rem;
-    width: 90%;
+    width: 80%;
+    margin-top: 2.5%;
+    padding-left: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+
+    & p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
 
 .price {
+    position: relative;
     display: flex;
     justify-content: flex-end;
-    position: relative;
-    bottom: 1rem;
-    padding-right: 1rem;
-    width: 90%;
+    width: 10%;
+    padding-right: 15px;
+
+    & h4 {
+        position: absolute;
+        bottom: 15px;
+
+    }
 
 }
+
 .select {
+    color: white;
+    background-color: #99e2d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 0%;
-    transform : translateX(100%);
-    opacity: 0;
+    transform: translateX(100%);
+    transition: 0.6s ease-in-out;
+
     & i {
         transform: translateX(100%);
     }
-    
+
 }
 
 
@@ -771,7 +695,6 @@
     .location {
         display: flex;
         justify-content: center;
-        width: 84%;
         border-bottom: 0.1rem solid gray;
     }
 
@@ -832,9 +755,7 @@
         margin-left: 5rem;
     }
 
-    .likecontainer {
-        margin-left: 8rem;
-    }
+
 
 
 
@@ -861,6 +782,7 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     .category {
         width: 100%;
     }
@@ -888,7 +810,7 @@
             justify-content: center;
         }
 
-       
+
 
         .info {
             padding-left: 4rem;
@@ -902,19 +824,20 @@
         .restaurantsection {
             max-width: 97%;
         }
-       
+
 
         .new {
             margin-left: 6rem;
         }
 
-        .likecontainer {
-            padding-left: 2.5rem;
-        }
+
 
         .menupage {
             width: 98%;
 
+        }
+        .menuoption {
+            height: 100px;
         }
 
         .footernav {
