@@ -531,7 +531,12 @@
         transform: translateY(0);
     }
 }
-
+.menuoption:nth-child(1) {
+    animation-delay: 0.5s;
+    }
+    .menuoption:nth-child(2) {
+        animation-delay: 1s;
+        }
 .menuoption {
     display: flex;
     flex-direction: row;
@@ -544,6 +549,8 @@
     margin-left: 0rem;
     margin-bottom: 1rem;
     overflow: hidden;
+    animation: appear 0.6s;
+    animation-fill-mode: backwards;
 
     &:hover .menutext {
         width: 50%;
