@@ -152,7 +152,7 @@ __ .location,
   animation: monanim;
   animation-duration: 3s;
   font-family: "Roboto";
-  margin: 0;
+  margin: auto;
 }
 
 .logo {
@@ -179,14 +179,12 @@ __ .location,
 
 .info {
   background-color: whitesmoke;
-  margin-top: 0rem;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  padding-left: 2.5rem;
+  padding: 1rem;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-size: 0.9rem;
   gap: 2rem;
 }
@@ -197,7 +195,7 @@ __ .location,
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding: 0rem;
+  padding: 1rem;
 }
 
 .explorebutton {
@@ -207,16 +205,20 @@ __ .location,
   border-radius: 5rem;
   border-color: transparent;
   font-size: 1rem;
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-right: 5rem;
-  margin-left: 2rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
 }
 .explorebutton:hover {
   background: linear-gradient(#fca5e3, #a678df);
   border-color: gray;
+}
+
+.works {
+  margin: 1rem;
 }
 
 .buttons {
@@ -231,13 +233,12 @@ __ .location,
   color: white;
   background-color: #9356dc;
   border-radius: 50rem;
-  padding-left: 0.5rem;
-  padding-right: 0.2rem;
-  padding-top: 0.2rem;
   width: 1rem;
   position: relative;
   top: 3rem;
   margin-left: 0.5rem;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
 }
 
 .icon {
@@ -286,7 +287,7 @@ __ .location,
 }
 .restaurantcards:hover {
   background-color: whitesmoke;
-  border: gray solid 0.1px;
+  box-shadow: 0px 0px 0px 0.2px;
 }
 
 .new {
@@ -331,68 +332,38 @@ __ .location,
   height: 1rem;
   width: 1rem;
   margin-left: 17rem;
-  opacity: 1;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   bottom: 2rem;
   cursor: pointer;
 }
+.likecontainer:hover .likefill {
+  height: 2rem;
+  background: linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .like {
-  background: transparent;
   position: absolute;
+  z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .likefill {
-  opacity: 0;
+  z-index: 2;
   position: absolute;
   display: flex;
   justify-content: center;
-}
-.likefill:hover {
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition-property: opacity;
-  transition-duration: 2s;
-  transition-timing-function: ease-in;
-  color: #9356dc;
-  z-index: 1;
-  opacity: 1;
-  animation: fill 2s;
+  align-items: center;
+  color: transparent;
 }
 
-@keyframes fill {
-  0% {
-    color: transparent;
-  }
-  20% {
-    color: #ff79da;
-  }
-  30% {
-    color: #ff79bc;
-  }
-  40% {
-    color: #ff79f8;
-  }
-  50% {
-    color: #bd56dc;
-  }
-  60% {
-    color: #e479ff;
-  }
-  70% {
-    color: #e979ff;
-  }
-  90% {
-    color: #9356dc;
-  }
-  100% {
-    color: transparent;
-  }
-}
 .homefooternav {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
@@ -403,17 +374,19 @@ __ .location,
 .footernav {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 72rem;
+  margin-top: 75rem;
   padding-top: 1rem;
   max-width: 100%;
+  padding-left: 1rem;
 }
 
 .footernav2 {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 87rem;
+  margin-top: 90rem;
   padding-top: 1rem;
   max-width: 100%;
+  padding-left: 1rem;
 }
 
 .footerlogo {
@@ -441,15 +414,24 @@ __ .location,
   text-decoration: none;
 }
 
+.back {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
 .backbutton {
-  margin-left: 2rem;
-  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 .restaurantimage {
   height: 20rem;
   width: 100%;
   margin-bottom: 0rem;
+  display: flex;
+  justify-content: center;
 }
 
 .menupage {
@@ -529,12 +511,13 @@ __ .location,
   padding-left: 1rem;
   animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
   animation-delay: 0.25s;
+  overflow: hidden;
 }
 .menuoption:hover .menutext {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
+  width: 40%;
 }
 .menuoption:hover .select {
   display: flex;
@@ -543,9 +526,11 @@ __ .location,
   position: absolute;
   right: 0rem;
   top: 50%;
+  transform: translateX(0%);
   transform: translateY(-50%);
+  transition: transform linear 3s;
   background-color: #99e2d0;
-  width: 25%;
+  width: 20%;
   height: 100%;
   border-radius: 0rem 1rem 1rem 0rem;
   transition: right 2s ease-in;
@@ -555,18 +540,14 @@ __ .location,
 }
 .menuoption:hover .select i {
   color: white;
-  transform: rotate(360deg);
+  transform: translateX(0%) rotate(360deg);
   transition: transform 0.5s ease;
 }
 .menuoption:hover .price {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
-}
-
-.select {
-  opacity: 0;
+  width: 60%;
 }
 
 .menuoption2 {
@@ -583,12 +564,13 @@ __ .location,
   padding-left: 1rem;
   animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
   animation-delay: 0.5s;
+  overflow: hidden;
 }
 .menuoption2:hover .menutext {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
+  width: 40%;
 }
 .menuoption2:hover .select {
   display: flex;
@@ -597,9 +579,11 @@ __ .location,
   position: absolute;
   right: 0rem;
   top: 50%;
+  transform: translateX(0%);
   transform: translateY(-50%);
+  transition: transform linear 3s;
   background-color: #99e2d0;
-  width: 25%;
+  width: 20%;
   height: 100%;
   border-radius: 0rem 1rem 1rem 0rem;
   transition: right 2s ease-in;
@@ -609,14 +593,14 @@ __ .location,
 }
 .menuoption2:hover .select i {
   color: white;
-  transform: rotate(360deg);
+  transform: translateX(0%) rotate(360deg);
   transition: transform 0.5s ease;
 }
 .menuoption2:hover .price {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
+  width: 60%;
 }
 
 .menuoption3 {
@@ -633,12 +617,13 @@ __ .location,
   padding-left: 1rem;
   animation: appear 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s both;
   animation-delay: 0.75s;
+  overflow: hidden;
 }
 .menuoption3:hover .menutext {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
+  width: 40%;
 }
 .menuoption3:hover .select {
   display: flex;
@@ -647,9 +632,11 @@ __ .location,
   position: absolute;
   right: 0rem;
   top: 50%;
+  transform: translateX(0%);
   transform: translateY(-50%);
+  transition: transform linear 3s;
   background-color: #99e2d0;
-  width: 25%;
+  width: 20%;
   height: 100%;
   border-radius: 0rem 1rem 1rem 0rem;
   transition: right 2s ease-in;
@@ -659,14 +646,14 @@ __ .location,
 }
 .menuoption3:hover .select i {
   color: white;
-  transform: rotate(360deg);
+  transform: translateX(0%) rotate(360deg);
   transition: transform 0.5s ease;
 }
 .menuoption3:hover .price {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 60%;
+  width: 60%;
 }
 
 .menutext {
@@ -674,14 +661,25 @@ __ .location,
   flex-direction: column;
   align-items: flex-start;
   font-size: 0.9rem;
+  width: 90%;
 }
 
 .price {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  bottom: 0rem;
+  bottom: 1rem;
   padding-right: 1rem;
+  width: 90%;
+}
+
+.select {
+  width: 0%;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.select i {
+  transform: translateX(100%);
 }
 
 .order {
@@ -728,9 +726,9 @@ __ .location,
     padding-left: 10rem;
   }
   .location {
-    width: 52%;
-    padding-left: 22rem;
-    float: left;
+    display: flex;
+    justify-content: center;
+    width: 84%;
     border-bottom: 0.1rem solid gray;
   }
   .info {
@@ -739,6 +737,8 @@ __ .location,
     font-size: 1rem;
     float: right;
     height: 22rem;
+    display: flex;
+    justify-content: center;
   }
   .explorebutton {
     width: 50%;
@@ -769,17 +769,15 @@ __ .location,
     width: 23%;
   }
   .restaurantcards img {
-    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .new {
-    margin-left: 4rem;
+    margin-left: 5rem;
   }
   .likecontainer {
     margin-left: 8rem;
-  }
-  .homefooternav {
-    display: flex;
-    flex-direction: row;
   }
   .footerlogo {
     height: 4rem;
@@ -790,22 +788,27 @@ __ .location,
   }
   .restaurantimage {
     object-fit: cover;
+    max-width: 100%;
   }
   .menupage {
     position: absolute;
-    top: 30rem;
+    top: 25rem;
     width: 98%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .category {
+    width: 100%;
   }
   .order {
     margin: 3rem;
   }
   .footernav {
-    margin-top: 82rem;
-    display: flex;
+    margin-top: 60rem;
   }
   .footernav2 {
-    margin-top: 98rem;
-    display: flex;
+    margin-top: 62rem;
   }
 }
 @media screen and (min-width: 767px) and (min-width: 900px) {
@@ -813,16 +816,12 @@ __ .location,
     display: flex;
     justify-content: center;
   }
-  .location {
-    width: 44%;
-    padding-left: 30rem;
-  }
   .info {
     padding-left: 4rem;
     width: 35%;
   }
   .chosebuttons {
-    width: 100%;
+    width: 60%;
   }
   .restaurantsection {
     max-width: 97%;
@@ -837,10 +836,10 @@ __ .location,
     width: 98%;
   }
   .footernav {
-    margin-top: 80rem;
+    margin-top: 60rem;
   }
   .footernav2 {
-    margin-top: 95rem;
+    margin-top: 62rem;
   }
 }
 
