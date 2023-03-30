@@ -704,15 +704,17 @@ __ .location,
     max-width: 100%;
   }
   .menupage {
-    position: absolute;
-    top: 25rem;
-    width: 98%;
+    position: relative;
+    width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    top: -40px;
   }
   .category {
-    width: 100%;
+    width: 90%;
   }
   .order {
     margin: 3rem;
