@@ -282,8 +282,7 @@ __ .location,
 .restaurantsection {
   background-color: whitesmoke;
   font-size: 0.8rem;
-  width: 100%;
-  padding-left: 5%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -388,7 +387,6 @@ __ .location,
 .footernav {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 75rem;
   padding-top: 1rem;
   max-width: 100%;
   padding-left: 1rem;
@@ -397,7 +395,6 @@ __ .location,
 .footernav2 {
   background-color: rgba(32, 31, 31, 0.842);
   padding-bottom: 1rem;
-  margin-top: 90rem;
   padding-top: 1rem;
   max-width: 100%;
   padding-left: 1rem;
@@ -712,12 +709,6 @@ __ .location,
   .order {
     margin: 3rem;
   }
-  .footernav {
-    margin-top: 60rem;
-  }
-  .footernav2 {
-    margin-top: 62rem;
-  }
 }
 @media screen and (min-width: 767px) and (min-width: 900px) {
   .spinner {
@@ -737,17 +728,8 @@ __ .location,
   .new {
     margin-left: 6rem;
   }
-  .menupage {
-    width: 98%;
-  }
   .menuoption {
     height: 100px;
-  }
-  .footernav {
-    margin-top: 60rem;
-  }
-  .footernav2 {
-    margin-top: 62rem;
   }
 }
 
