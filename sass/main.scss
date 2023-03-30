@@ -248,10 +248,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 5%;
+    padding-top: 35px;
+   
 
 
 }
-
+.restaurants h1 {
+    padding-bottom: 20px;
+}
 .cardimage {
     position: relative;
 }
@@ -439,9 +444,11 @@
     background-color: whitesmoke;
     padding-top: 1rem;
     margin-top: -30px;
-    top: 20rem;
-    width: 96%;
+    width: 95%;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+    padding-left: 5%;
 
 }
 
@@ -727,12 +734,13 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0.5rem;
-        padding-left: 2rem;
+        padding-left: 0;
     }
 
 
     .restaurants {
         margin-right: 100rem;
+    
     }
 
     .restaurantcards {
